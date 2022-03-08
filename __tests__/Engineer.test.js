@@ -1,3 +1,3 @@
-const Employee = require('../Employee');
-const Engineer = require("../Engineer");
+const Employee = require('../lib/Employee');
+const Engineer = require("../lib/Engineer");
 
