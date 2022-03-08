@@ -1,0 +1,2 @@
+const Intern = require("../Intern");
+
