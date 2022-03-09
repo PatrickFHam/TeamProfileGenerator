@@ -1,6 +1,28 @@
 {
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickFHam/TeamProfileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickFHam/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/PatrickFHam/TeamProfileGenerator#readme",
   "dependencies": {
-    "inquirer": "^8.2.0",
+    "inquirer": "^8.2.1"
+  },
+  "devDependencies": {
     "jest": "^27.5.1"
   }
 }
