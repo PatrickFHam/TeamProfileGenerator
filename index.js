@@ -3,7 +3,6 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-
 const fs = require('fs');
 const inquirer = require('inquirer');
 
@@ -17,23 +16,17 @@ function createHTMLfile (data) {
       console.log(err);
       return;
     } else {
-      console.log("HTML file was created, check the 'dist' folder.");
+      console.log("HTML file was created, and is located in the 'dist' folder.\n");
     }
   })
 };
 
 function receiveFinalHTML(data) {
-  console.log(data);
   return createHTMLfile(data);
 }
 
 function passToBuildHTML(teamMembers) {
-  
-  console.log("HTML will be built now, using the following array:");
-  console.log(teamMembers);
-
   finalHTML = buildHTML(teamMembers);
-
   return receiveFinalHTML(finalHTML);
 }
 
@@ -56,15 +49,18 @@ const addIntern = async (teamMembers) => {
       message: "What is the Intern's EMAIL? ",
       // VALIDATION 'if' came from Regex
       validate: function(internEmail) {
+        
+        emailIsValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(internEmail)
+        
         if (
-          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true
+          emailIsValid == true
             &&
-          internEmail.length <= 35
+          managerEmail.length <= 35
             &&
-          internEmail.length >= 5) {
+          managerEmail.length >= 5) {
           return true;
         } else {
-          console.log("Invalid email address format.  Please try again.");
+          console.log("\n  !!!\nInvalid email address format.  Please try again.\n  !!!");
           return false;
         }
       }
@@ -103,16 +99,19 @@ const addEngineer = async (teamMembers) => {
       name: 'engineerEmail',
       message: "What is the Engineer's EMAIL? ",
       // VALIDATION 'if' came from Regex
-      validate: function(internEmail) {
+      validate: function(engineerEmail) {
+        
+        emailIsValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(engineerEmail)
+        
         if (
-          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true
+          emailIsValid == true
             &&
-          internEmail.length <= 35
+          managerEmail.length <= 35
             &&
-          internEmail.length >= 5) {
+          managerEmail.length >= 5) {
           return true;
         } else {
-          console.log("Invalid email address format.  Please try again.");
+          console.log("\n  !!!\nInvalid email address format.  Please try again.\n  !!!");
           return false;
         }
       }
@@ -168,16 +167,19 @@ const getManagerInfo = async () => {
       name: 'managerEmail',
       message: "What is the Manager's EMAIL? ",
       // VALIDATION 'if' came from Regex
-      validate: function(internEmail) {
+      validate: function(managerEmail) {
+        
+        emailIsValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(managerEmail)
+        
         if (
-          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true
+          emailIsValid == true
             &&
-          internEmail.length <= 35
+          managerEmail.length <= 35
             &&
-          internEmail.length >= 5) {
+          managerEmail.length >= 5) {
           return true;
         } else {
-          console.log("Invalid email address format.  Please try again.");
+          console.log("\n  !!!\nInvalid email address format.  Please try again.\n  !!!");
           return false;
         }
       }
