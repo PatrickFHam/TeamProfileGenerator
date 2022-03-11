@@ -11,7 +11,7 @@ let finalHTML = require('./src/buildHTML');
 let teamMembers = [];
 
 function createHTMLfile (data) {
-  fs.writeFile('./dist/testhtml.html', data, err => {
+  fs.writeFile('./dist/index.html', data, err => {
     if (err) {
       console.log(err);
       return;

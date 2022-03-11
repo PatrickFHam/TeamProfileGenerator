@@ -104,7 +104,7 @@ function buildWholePage (htmlOfAllEmployeeCards) {
           </a>
 
           <ul class="nav nav-pills">
-            <li class="nav-item"><a href="" target="_blank" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="https://www.github.com/patrickfham" target="_blank" class="nav-link">About Me</a></li>
           </ul>
         </header>
 
