@@ -110,7 +110,7 @@ function buildWholePage (htmlOfAllEmployeeCards) {
 
     <main>
       <div id="mainbox" class="container d-flex flex-wrap justify-content-center my-3">
-
+      
         ${htmlOfAllEmployeeCards}
 
       </div>
