@@ -41,7 +41,17 @@ const addIntern = async (teamMembers) => {
     {
       type: 'input',
       name: 'internId',
-      message: "What is the Intern's ID? "
+      message: "What is the Intern's ID? ",
+      validate: function(internId) {
+        idIsValid = /^[0-9]*$/g.test(internId);
+
+        if (idIsValid == true && internId.length == 4) {
+          return true;
+        } else {
+          console.log("!!!\nID Numbers are only 4 digits, only numbers.\nTry again.\n!!!");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -92,7 +102,17 @@ const addEngineer = async (teamMembers) => {
     {
       type: 'input',
       name: 'engineerId',
-      message: "What is the Engineer's ID? "
+      message: "What is the Engineer's ID? ",
+      validate: function(engineerId) {
+        idIsValid = /^[0-9]*$/g.test(engineerId);
+
+        if (idIsValid == true && engineerId.length == 4) {
+          return true;
+        } else {
+          console.log("!!!\nID Numbers are only 4 digits, only numbers.\nTry again.\n!!!");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -160,7 +180,17 @@ const getManagerInfo = async () => {
     {
       type: 'input',
       name: 'managerId',
-      message: "What is the Manager's ID? "
+      message: "What is the Manager's ID? ",
+      validate: function(managerId) {
+        idIsValid = /^[0-9]*$/g.test(managerId);
+
+        if (idIsValid == true && managerId.length == 4) {
+          return true;
+        } else {
+          console.log("!!!\nID Numbers are only 4 digits, only numbers.\nTry again.\n!!!");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -187,7 +217,18 @@ const getManagerInfo = async () => {
     {
       type: 'input',
       name: 'managerOfficeNumber',
-      message: "What is the Manager's OFFICE NUMBER (ext., 3-digit-#) "
+      message: "What is the Manager's OFFICE NUMBER (ext., 3-digit-#) ",
+      // PHONE NUMBER VALIDATION 'if' came from RegexTester.com
+      validate: function(managerOfficeNumber) {
+        officeNumberIsValid = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/g.test(managerOfficeNumber);
+
+        if (officeNumberIsValid) {return true}
+        else {
+          console.log("\n  !!!\nInvalid phone number format. \nPlease try again, with a standard phone number format.\n    (Extensions are allowed, as 'x.313'.)\n  !!!");
+          return false;
+        }
+
+      }
     }
   ];
 
