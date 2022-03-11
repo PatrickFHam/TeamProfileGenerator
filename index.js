@@ -3,15 +3,20 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+const buildHTML = require('./src/buildHTML.js')
+
 let teamMembers = [];
 
-const buildHTML = (teamMembers) => {
+const passToBuildHTML = (teamMembers) => {
   
   console.log("HTML will be built now, using the following array:");
   console.log(teamMembers);
+
+  buildHTML(teamMembers);
 }
 
 const addIntern = async (teamMembers) => {
@@ -96,7 +101,7 @@ const qToAddNewTeamMember = async (teamMembers) => {
 
   if (choice.chooseToAddAnother == "Add an ENGINEER to the team.") {return addEngineer(teamMembers)} else
   if (choice.chooseToAddAnother == "Add an INTERN to the team.")   {return addIntern(teamMembers)}   else
-  {return buildHTML(teamMembers)};
+  {return passToBuildHTML(teamMembers)};
 }
 
 const getManagerInfo = async () => {
