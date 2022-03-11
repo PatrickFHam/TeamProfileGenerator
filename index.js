@@ -16,7 +16,7 @@ function createHTMLfile (data) {
       console.log(err);
       return;
     } else {
-      console.log("HTML file was created, and is located in the 'dist' folder.\n");
+      console.log("\nThe 'My Team' page has been created.  It is called 'index.html' in the folder named 'dist'.\n");
     }
   })
 };
