@@ -1,6 +1,6 @@
 function createManagerCard (manager) {
   const managerRawHTML = `
-    <div class="card manager-card mx-2" style="width: 18rem;">
+    <div class="card border-primary manager-card mx-2" style="width: 18rem;">
       <img src="./assets/images/managerlogo.jpg" class="card-img-top" alt="managerlogo">
       <div class="card-body">
         <h3 class="card-title role-on-card role-is-manager">Project Manager</h3>
@@ -17,16 +17,16 @@ function createManagerCard (manager) {
 
 function createEngineerCard (engineer) {
   const engineerRawHTML = `
-  <div class="card engineer-card mx-2" style="width: 18rem;">
-    <img src="./assets/images/owllogo.jpg" class="card-img-top" alt="engineerlogo">
+  <div class="card border-danger engineer-card mx-2" style="width: 18rem;">
+    <img src="./assets/images/engineerlogo.jpg" class="card-img-top" alt="engineerlogo">
     <div class="card-body">
       <h3 class="card-title role-on-card role-is-engineer">Engineer</h3>
       <h5 class="card-text name-on-card">${engineer.name}</h5>
       <p class="card-text id-on-card">ID#: ${engineer.id}</p>
       <p class="card-text email-on-card">${engineer.email}</p>
       <p class="card-text github-on-card">GitHub: ${engineer.github}</p>
-      <a href="mailto:${engineer.email}" class="btn btn-primary">Send an Email</a>
-      <a href="https://www.github.com/${engineer.github}" target="_blank" class="btn btn-primary">Visit GitHub</a>
+      <a href="mailto:${engineer.email}" class="btn btn-danger">Send an Email</a>
+      <a href="https://www.github.com/${engineer.github}" target="_blank" class="btn btn-danger">Visit GitHub</a>
     </div>
   </div>
   `
@@ -35,15 +35,15 @@ function createEngineerCard (engineer) {
 
 function createInternCard (intern) {
   const internRawHTML = `
-    <div class="card intern-card mx-2" style="width: 18rem;">
-      <img src="./assets/images/burgerlogo.jpg" class="card-img-top" alt="internlogo">
+    <div class="card border-dark intern-card mx-2" style="width: 18rem;">
+      <img src="./assets/images/internlogo.jpg" class="card-img-top" alt="internlogo">
       <div class="card-body">
         <h3 class="card-title role-on-card role-is-intern">Intern</h3>
         <h5 class="card-text name-on-card">${intern.name}</h5>
         <p class="card-text id-on-card">ID#: ${intern.id}<p>
         <p class="card-text email-on-card">${intern.email}</p>
         <p class="card-text school-on-card">School: ${intern.school}</p>
-        <a href="mailto:${intern.email}" class="btn btn-primary">Send an Email</a>
+        <a href="mailto:${intern.email}" class="btn btn-secondary">Send an Email</a>
       </div>
     </div>
     `
@@ -93,19 +93,17 @@ function buildWholePage (htmlOfAllEmployeeCards) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="./assets/css/style.css">
 
-        <title>Hambone's Dream Team</title>
+        <title>My Team</title>
       </head>
       <body>
         
-        <header class="bg-image d-flex flex-wrap justify-content-center py-3 border-bottom mx-0" style="background-image: url(./assets/images/other.jpg)">
+        <header class="bg-image d-flex flex-wrap justify-content-center py-3 border-bottom mx-0" style="background-image: url(./assets/images/headerbg.jpg)">
           <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <h1 class="fs-4 btn btn-light btn-lg">Hambone's Dream Team</h1>
+            <h1 class="fs-4 btn btn-light btn-lg">My Team</h1>
           </a>
 
           <ul class="nav nav-pills">
-            <li class="nav-item"><a href="" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="" target="_blank" class="nav-link">API Info</a></li>
             <li class="nav-item"><a href="" target="_blank" class="nav-link">About Me</a></li>
           </ul>
         </header>
