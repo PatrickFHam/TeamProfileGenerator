@@ -74,9 +74,9 @@ const addIntern = async (teamMembers) => {
         if (
           emailIsValid == true
             &&
-          managerEmail.length <= 35
+          internEmail.length <= 35
             &&
-          managerEmail.length >= 5) {
+          internEmail.length >= 5) {
           return true;
         } else {
           console.log("\n  !!!\nInvalid email address format.  Please try again.\n  !!!");
@@ -144,9 +144,9 @@ const addEngineer = async (teamMembers) => {
         if (
           emailIsValid == true
             &&
-          managerEmail.length <= 35
+          engineerEmail.length <= 35
             &&
-          managerEmail.length >= 5) {
+          engineerEmail.length >= 5) {
           return true;
         } else {
           console.log("\n  !!!\nInvalid email address format.  Please try again.\n  !!!");
@@ -250,7 +250,7 @@ const getManagerInfo = async () => {
     {
       type: 'input',
       name: 'managerOfficeNumber',
-      message: "What is the Manager's OFFICE NUMBER (ext., 3-digit-#) ",
+      message: "What is the Manager's OFFICE PHONE NUMBER",
       // PHONE NUMBER VALIDATION 'if' came from RegexTester.com
       validate: function(managerOfficeNumber) {
         officeNumberIsValid = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/g.test(managerOfficeNumber);
