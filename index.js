@@ -139,7 +139,13 @@ const addEngineer = async (teamMembers) => {
     {
       type: 'input',
       name: 'engineerGithub',
-      message: "What is the Engineer's GITHUB USERNAME? "
+      message: "What is the Engineer's GITHUB USERNAME? ",
+      validate: function(engineerGithub) {
+        githubIsValid = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(engineerGithub);
+
+        if (githubIsValid) {return true}
+        else {return false};
+      }
     }
   ]
 
