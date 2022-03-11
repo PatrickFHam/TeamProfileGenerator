@@ -26,7 +26,7 @@ function createEngineerCard (engineer) {
       <p class="card-text email-on-card">${engineer.email}</p>
       <p class="card-text github-on-card">GitHub: ${engineer.github}</p>
       <a href="mailto:${engineer.email}" class="btn btn-primary">Send an Email</a>
-      <a href="https://www.github.com/${engineer.github}" class="btn btn-primary">Visit GitHub</a>
+      <a href="https://www.github.com/${engineer.github}" target="_blank" class="btn btn-primary">Visit GitHub</a>
     </div>
   </div>
   `
