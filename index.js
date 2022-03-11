@@ -7,16 +7,34 @@ const Intern = require('./lib/Intern');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-const buildHTML = require('./src/buildHTML.js')
+let finalHTML = require('./src/buildHTML');
 
 let teamMembers = [];
 
-const passToBuildHTML = (teamMembers) => {
+function createHTMLfile (data) {
+  fs.writeFile('./dist/testhtml.html', data, err => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log("HTML file was created, check the 'dist' folder.");
+    }
+  })
+};
+
+function receiveFinalHTML(data) {
+  console.log(data);
+  return createHTMLfile(data);
+}
+
+function passToBuildHTML(teamMembers) {
   
   console.log("HTML will be built now, using the following array:");
   console.log(teamMembers);
 
-  buildHTML(teamMembers);
+  finalHTML = buildHTML(teamMembers);
+
+  return receiveFinalHTML(finalHTML);
 }
 
 const addIntern = async (teamMembers) => {
@@ -101,6 +119,7 @@ const qToAddNewTeamMember = async (teamMembers) => {
 
   if (choice.chooseToAddAnother == "Add an ENGINEER to the team.") {return addEngineer(teamMembers)} else
   if (choice.chooseToAddAnother == "Add an INTERN to the team.")   {return addIntern(teamMembers)}   else
+  // {return teamMembers};
   {return passToBuildHTML(teamMembers)};
 }
 

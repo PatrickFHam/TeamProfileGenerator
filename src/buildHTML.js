@@ -13,7 +13,7 @@ function createManagerCard (manager) {
     </div>
   `
   return managerRawHTML;
-}
+};
 
 function createEngineerCard (engineer) {
   const engineerRawHTML = `
@@ -31,29 +31,32 @@ function createEngineerCard (engineer) {
   </div>
   `
   return engineerRawHTML;
-}
+};
 
 function createInternCard (intern) {
   const internRawHTML = `
-  <div class="card intern-card mx-2" style="width: 18rem;">
-    <img src="./assets/images/burgerlogo.jpg" class="card-img-top" alt="internlogo">
-    <div class="card-body">
-      <h3 class="card-title role-on-card role-is-intern">Intern</h3>
-      <h5 class="card-text name-on-card">${intern.name}</h5>
-      <p class="card-text id-on-card">ID#: ${intern.id}p>
-      <p class="card-text email-on-card">${intern.email}</p>
-      <p class="card-text school-on-card">School: ${intern.school}</p>
-      <a href="mailto:${intern.email}" class="btn btn-primary">Send an Email</a>
+    <div class="card intern-card mx-2" style="width: 18rem;">
+      <img src="./assets/images/burgerlogo.jpg" class="card-img-top" alt="internlogo">
+      <div class="card-body">
+        <h3 class="card-title role-on-card role-is-intern">Intern</h3>
+        <h5 class="card-text name-on-card">${intern.name}</h5>
+        <p class="card-text id-on-card">ID#: ${intern.id}p>
+        <p class="card-text email-on-card">${intern.email}</p>
+        <p class="card-text school-on-card">School: ${intern.school}</p>
+        <a href="mailto:${intern.email}" class="btn btn-primary">Send an Email</a>
+      </div>
     </div>
-  </div>
-  `
+    `
   return internRawHTML;
-}
+};
 
+let finalHTML = '';
 
-
-function buildHTML (teamMembers) {
+buildHTML = (teamMembers) => {
   console.log("array was successfully passed to the new JS file.")
+
+  console.log("array looks like this right now: \n")
+  console.log(teamMembers);
 
   let arrayOfCards = [];
 
@@ -78,11 +81,17 @@ function buildHTML (teamMembers) {
   }
 
   const htmlOfAllEmployeeCards = arrayOfCards.join('');
-  return buildWholePage(htmlOfAllEmployeeCards);
+  const finalHTML = buildWholePage(htmlOfAllEmployeeCards);
+  
+  console.log("after all the cards are added, the html looks like this right now: \n");
+  console.log(finalHTML);
+  
+  return finalHTML;
+
 };
 
 function buildWholePage (htmlOfAllEmployeeCards) {
-  finalHTML = `
+  html = `
     <!doctype html>
     <html lang="en">
       <head>
@@ -127,5 +136,7 @@ function buildWholePage (htmlOfAllEmployeeCards) {
     </html>
   `
 
-return finalHTML;
-}
+  console.log("HTML was successfully generated.")
+
+  return html;
+};
