@@ -53,7 +53,16 @@ const addIntern = async (teamMembers) => {
     {
       type: 'input',
       name: 'internEmail',
-      message: "What is the Intern's EMAIL? "
+      message: "What is the Intern's EMAIL? ",
+      // VALIDATION 'if' came from Regex
+      validate: function(internEmail) {
+        if ( /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true) {
+          return true;
+        } else {
+          console.log("Invalid email address format.  Please try again.");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -87,7 +96,16 @@ const addEngineer = async (teamMembers) => {
     {
       type: 'input',
       name: 'engineerEmail',
-      message: "What is the Engineer's EMAIL? "
+      message: "What is the Engineer's EMAIL? ",
+      // VALIDATION 'if' came from Regex
+      validate: function(engineerEmail) {
+        if ( /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true) {
+          return true;
+        } else {
+          console.log("Invalid email address format.  Please try again.");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -138,7 +156,16 @@ const getManagerInfo = async () => {
     {
       type: 'input',
       name: 'managerEmail',
-      message: "What is the Manager's EMAIL? "
+      message: "What is the Manager's EMAIL? ",
+      // VALIDATION 'if' came from Regex
+      validate: function(internEmail) {
+        if ( /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true) {
+          return true;
+        } else {
+          console.log("Invalid email address format.  Please try again.");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
