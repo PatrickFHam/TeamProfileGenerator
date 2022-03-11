@@ -55,10 +55,30 @@ function createInternCard (intern) {
 function buildHTML (teamMembers) {
   console.log("array was successfully passed to the new JS file.")
 
-  let arrayToBuild = [];
+  let arrayOfCards = [];
 
+  for (let i=0; i<teamMembers.length; i++) {
+    const employee = teamMembers[i];
+    const role = employee.getRole();
 
+    if (role === "Manager") {
+      const managerCard = createManagerCard(employee);
+      arrayOfCards.push(managerCard);
+    }
 
+    if (role === "Engineer") {
+      const engineerCard = createEngineerCard(employee);
+      arrayOfCards.push(engineerCard);
+    }
+
+    if (role === "Intern") {
+      const internCard = createInternCard(employee);
+      arrayOfCards.push(internCard);
+    }
+  }
+
+  const htmlOfAllEmployeeCards = arrayOfCards.join('');
+  return buildWholePage(htmlOfAllEmployeeCards);
 };
 
 function buildWholePage (htmlOfAllEmployeeCards) {
