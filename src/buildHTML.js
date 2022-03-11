@@ -53,11 +53,6 @@ function createInternCard (intern) {
 let finalHTML = '';
 
 buildHTML = (teamMembers) => {
-  console.log("array was successfully passed to the new JS file.")
-
-  console.log("array looks like this right now: \n")
-  console.log(teamMembers);
-
   let arrayOfCards = [];
 
   for (let i=0; i<teamMembers.length; i++) {
