@@ -40,7 +40,7 @@ function createInternCard (intern) {
       <div class="card-body">
         <h3 class="card-title role-on-card role-is-intern">Intern</h3>
         <h5 class="card-text name-on-card">${intern.name}</h5>
-        <p class="card-text id-on-card">ID#: ${intern.id}p>
+        <p class="card-text id-on-card">ID#: ${intern.id}<p>
         <p class="card-text email-on-card">${intern.email}</p>
         <p class="card-text school-on-card">School: ${intern.school}</p>
         <a href="mailto:${intern.email}" class="btn btn-primary">Send an Email</a>
