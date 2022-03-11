@@ -36,7 +36,16 @@ const addIntern = async (teamMembers) => {
     {
       type: 'input',
       name: 'internName',
-      message: "What is the Intern's NAME? "
+      message: "What is the Intern's NAME? ",
+      validate: function(internName) {
+        nameIsValid = /^[A-Za-z]+([\ A-Za-z]+)*/.test(internName);
+        if (nameIsValid && internName.length >= 3 && internName.length <= 30) {
+          return true;
+        } else {
+          console.log("\n!!!\nPlease check the name formatting.\nNo numbers. Between 3 and 30 characters.\n!!!");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -97,7 +106,16 @@ const addEngineer = async (teamMembers) => {
     {
       type: 'input',
       name: 'engineerName',
-      message: "What is the Engineer's NAME? "
+      message: "What is the Engineer's NAME? ",
+      validate: function(engineerName) {
+        nameIsValid = /^[A-Za-z]+([\ A-Za-z]+)*/.test(engineerName);
+        if (nameIsValid && engineerName.length >= 3 && engineerName.length <= 30) {
+          return true;
+        } else {
+          console.log("\n!!!\nPlease check the name formatting.\nNo numbers. Between 3 and 30 characters.\n!!!");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -181,7 +199,16 @@ const getManagerInfo = async () => {
     {
       type: 'input',
       name: 'managerName',
-      message: "What is the Manager's NAME? "
+      message: "What is the Manager's NAME? ",
+      validate: function(managerName) {
+        nameIsValid = /^[A-Za-z]+([\ A-Za-z]+)*/.test(managerName);
+        if (nameIsValid && managerName.length >= 3 && managerName.length <= 30) {
+          return true;
+        } else {
+          console.log("\n!!!\nPlease check the name formatting.\nNo numbers. Between 3 and 30 characters.\n!!!");
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -250,3 +277,12 @@ const main = async () => {
 };
 
 main();
+
+
+/* 
+VALIDATIONs:
+  name-regex -- https://andrewwoods.net/blog/2018/name-validation-regex/
+  phone-regex -- https://www.regextester.com/
+  email-regex -- https://www.regextester.com/
+  github-regex -- https://github.com/shinnn/github-username-regex
+ */
