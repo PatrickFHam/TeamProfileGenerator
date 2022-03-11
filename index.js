@@ -56,7 +56,12 @@ const addIntern = async (teamMembers) => {
       message: "What is the Intern's EMAIL? ",
       // VALIDATION 'if' came from Regex
       validate: function(internEmail) {
-        if ( /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true) {
+        if (
+          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true
+            &&
+          internEmail.length <= 35
+            &&
+          internEmail.length >= 5) {
           return true;
         } else {
           console.log("Invalid email address format.  Please try again.");
@@ -98,8 +103,13 @@ const addEngineer = async (teamMembers) => {
       name: 'engineerEmail',
       message: "What is the Engineer's EMAIL? ",
       // VALIDATION 'if' came from Regex
-      validate: function(engineerEmail) {
-        if ( /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true) {
+      validate: function(internEmail) {
+        if (
+          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true
+            &&
+          internEmail.length <= 35
+            &&
+          internEmail.length >= 5) {
           return true;
         } else {
           console.log("Invalid email address format.  Please try again.");
@@ -159,7 +169,12 @@ const getManagerInfo = async () => {
       message: "What is the Manager's EMAIL? ",
       // VALIDATION 'if' came from Regex
       validate: function(internEmail) {
-        if ( /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true) {
+        if (
+          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ == true
+            &&
+          internEmail.length <= 35
+            &&
+          internEmail.length >= 5) {
           return true;
         } else {
           console.log("Invalid email address format.  Please try again.");
