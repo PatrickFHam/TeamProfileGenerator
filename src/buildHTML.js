@@ -83,11 +83,7 @@ buildHTML = (teamMembers) => {
   const htmlOfAllEmployeeCards = arrayOfCards.join('');
   const finalHTML = buildWholePage(htmlOfAllEmployeeCards);
   
-  console.log("after all the cards are added, the html looks like this right now: \n");
-  console.log(finalHTML);
-  
   return finalHTML;
-
 };
 
 function buildWholePage (htmlOfAllEmployeeCards) {
@@ -135,8 +131,6 @@ function buildWholePage (htmlOfAllEmployeeCards) {
       </body>
     </html>
   `
-
-  console.log("HTML was successfully generated.")
 
   return html;
 };
